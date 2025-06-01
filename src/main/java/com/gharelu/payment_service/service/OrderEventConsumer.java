@@ -16,7 +16,7 @@ public class OrderEventConsumer {
     @Autowired
     ObjectMapper objectMapper;
 
-    @KafkaListener(topics = "order-created-topic", groupId = "payment-service-new-group", containerFactory = "kafkaListenerContainerFactory")
+    @KafkaListener(topics = "order-created-topic", groupId = "1", containerFactory = "kafkaListenerContainerFactory")
     public void consumeOrderEvent(String message) {
         try {
             OrderEvent event = objectMapper.readValue(message, OrderEvent.class);
