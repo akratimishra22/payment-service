@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "02bb3822-a538-4665-9e19-4b814f0ebef9",
+		"name": "Payment Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24311590",
+		"_collection_link": "https://gharelu.postman.co/workspace/Gharelu~119bd922-44ef-40ab-bfee-38d6d8c43410/collection/24311590-02bb3822-a538-4665-9e19-4b814f0ebef9?action=share&source=collection_link&creator=24311590"
+	},
+	"item": [
+		{
+			"name": "ProcessPayment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c978d075-9ca3-47bd-ae66-74f77f65baf9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"orderId\": 106,\r\n  \"amount\": 499.99,\r\n  \"paymentMethod\": \"UPI\",\r\n  \"paymentStatus\": \"PENDING\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/payment-service/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"payment-service",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPaymentByOrderId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c978d075-9ca3-47bd-ae66-74f77f65baf9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/payment-service/payment/order/106",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"payment-service",
+						"payment",
+						"order",
+						"106"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllPayments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c978d075-9ca3-47bd-ae66-74f77f65baf9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/payment-service/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"payment-service",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
